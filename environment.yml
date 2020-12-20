@@ -1,0 +1,37 @@
+name: opencv
+channels:
+  - defaults
+dependencies:
+  - ca-certificates
+  - certifi
+  - openssl
+  - pip
+  - python
+  - setuptools
+  - sqlite
+  - vc
+  - vs2015_runtime
+  - wheel
+  - wincertstore
+  - pip:
+    - bottle
+    - bottle-websocket
+    - cffi
+    - cmake
+    - cycler
+    - eel
+    - face-recognition
+    - future
+    - gevent
+    - gevent-websocket
+    - greenlet
+    - kiwisolver
+    - matplotlib
+    - numpy
+    - opencv-contrib-python
+    - opencv-python
+    - pycparser
+    - pyparsing
+    - python-dateutil
+    - whichcraft
+

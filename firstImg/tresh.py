@@ -1,15 +1,21 @@
-#this code opens an image with openCV
-
-#import openCV and numpy 
+# import openCV and numpy 
 import cv2
 import numpy as np
 
-#use openCV to read an image, store image as 'src'
+# use openCV to read an image, store image as 'src'
 src = cv2.imread("tzj.jpg", cv2.IMREAD_ANYCOLOR)
 
+'''
+# canny edge detection without slider
+edge = cv2.Canny(src, 100, 100, apertureSize=3, L2gradient=True)
+cv2.imshow('canny', edge)
+cv2.waitKey(0) '''
+
+# tracker
 # empty callback function for creating trackar
 def callback(foo):
     pass
+
 # create windows and trackbar
 cv2.namedWindow('parameters')
 cv2.createTrackbar('threshold1', 'parameters', 0, 255, callback)
