@@ -10,7 +10,8 @@ import cv2
 import numpy as np
 from camera import VideoCamera
 
-# Read Images
+# Read Images and Video
+# to open camera, video_name = ""
 video_name = "./web/image/justin.mp4"
 img = cv2.imread("./web/image/empty.png",cv2.IMREAD_GRAYSCALE)
 
