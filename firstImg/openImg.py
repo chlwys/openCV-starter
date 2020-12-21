@@ -4,7 +4,7 @@
 import cv2
 
 #use openCV to read an image, store image as 'src'
-src = cv2.imread("tzj.jpg", cv2.IMREAD_ANYCOLOR)
+src = cv2.imread("./tzj.jpg", cv2.IMREAD_ANYCOLOR)
 
 #display image in a window
 cv2.imshow("Image", src)
