@@ -10,19 +10,26 @@ img2 = cv2.imread("./web/image/img2.jpg", cv2.IMREAD_COLOR)
 img3 = cv2.imread("./web/image/img3.jpg", cv2.IMREAD_COLOR)
 
 imgs = [img1, img2, img3]
-count = 1
+count = 0
+
+#kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(2,1))
 
 # set up EEL
 @eel.expose
 def setup():
-  img_send_to_js(img1, "center")
+  changeImage()
 
 
 # changing photo
 @eel.expose
 def changeImage():
   global count 
-  img_send_to_js(imgs[count%3], "center")
+  output = imgs[count%3]
+#  blurred = cv2.bilateralFilter(imgs[count%3], 7, 100, 100)
+#  edge = cv2.Canny(blurred, 200, 200, apertureSize=3, L2gradient=True)
+#  opening = cv2.morphologyEx(edge, cv2.MORPH_OPEN, kernel)
+#  output = opening
+  img_send_to_js(output, "center")
   count = count + 1
 
 # send image to html - do not touch
